@@ -1,1 +1,2 @@
-# sometimespaulreads-v2
+# Sometimes Paul Reads
+Over the top book reviews.
