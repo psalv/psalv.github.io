@@ -49,24 +49,11 @@ const HeaderTypography = styled(Typography)`
     font-size: 21px !important;
   }
 `;
-export class Header extends React.Component<
-  {
-    setCurrentIndex: (index: number) => void;
-  },
-  { open: boolean }
-> {
-  state = { open: false };
-
-  toggleOpen = () => {
-    this.setState({ open: !this.state.open }, () => {
-      if (this.state.open) {
-        document.body.classList.add("noscroll");
-      } else {
-        document.body.classList.remove("noscroll");
-      }
-    });
-  };
-
+export class Header extends React.Component<{
+  setCurrentIndex: (index: number) => void;
+  toggleHeaderOpen: () => void;
+  isHeaderOpen: boolean;
+}> {
   render() {
     return (
       <>
@@ -82,11 +69,11 @@ export class Header extends React.Component<
             </HeaderTypography>
           </TabletAndAbove>
 
-          <MenuButton onClick={this.toggleOpen} name="menu">
-            <Hamburger open={this.state.open} />
+          <MenuButton onClick={this.props.toggleHeaderOpen} name="menu">
+            <Hamburger open={this.props.isHeaderOpen} />
           </MenuButton>
         </StyledRow>
-        {this.state.open ? (
+        {this.props.isHeaderOpen ? (
           <OptionsContainer>
             {bookData.map((book, index) => (
               <BookRow
@@ -94,7 +81,7 @@ export class Header extends React.Component<
                 key={book.name}
                 onClick={() => {
                   this.props.setCurrentIndex(index);
-                  this.toggleOpen();
+                  this.props.toggleHeaderOpen();
                 }}
               >
                 <Typography variant="h2" align="right">

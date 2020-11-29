@@ -42,6 +42,7 @@ const ContentWrapper = styled(Column)`
 export class Content extends React.Component<{
   setCurrentIndex: (index: number) => void;
   currentIndex: number;
+  headerOpen: boolean;
 }> {
   componentDidMount() {
     window.addEventListener("keydown", this.handleKeyPressed);
@@ -67,10 +68,12 @@ export class Content extends React.Component<{
   render() {
     return (
       <ContentWrapper>
-        <Carousel
-          setCurrentIndex={this.props.setCurrentIndex}
-          currentIndex={this.props.currentIndex}
-        />
+        {this.props.headerOpen ? null : (
+          <Carousel
+            setCurrentIndex={this.props.setCurrentIndex}
+            currentIndex={this.props.currentIndex}
+          />
+        )}
         <CarouselButton
           name="previous review"
           left
