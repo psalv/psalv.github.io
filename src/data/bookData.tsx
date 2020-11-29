@@ -94,7 +94,7 @@ export const bookData: IBookData[] = [
       year: 2020,
       lines: [
         "Entirely captivating.",
-        "A fantastic adventure that I couldn’t put down.",
+        "A fantastic adventure that I couldn't put down.",
         "Combines elements of nostalgia with dystopia to create a refreshing and fun read.",
         "The universe is imaginative, detailed, and relatable.",
       ],
@@ -263,7 +263,7 @@ export const bookData: IBookData[] = [
       lines: [
         "Fun.",
         "Difficult to put down.",
-        "The book manages to top itself time and again with each new feat ofingenuity and creativity.",
+        "The book manages to top itself time and again with each new feat of ingenuity and creativity.",
         "Climbing into the mind of an astronaut.",
       ],
     },
