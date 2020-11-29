@@ -25,12 +25,14 @@ const OptionsContainer = styled(Column)`
   height: calc(100vh - ${headerHeight}px);
   -webkit-overflow-scrolling: touch;
   overflow-y: auto;
+  padding-bottom: 250px;
 `;
 
-const BookRow = styled(Row)`
+const BookRow = styled.div`
   width: 100%;
-  justify-content: flex-end;
-  padding: 16px 32px;
+  padding: 0 32px;
+  cursor: pointer;
+  margin: 16px 0;
 `;
 
 const MenuButton = styled.button`
@@ -42,6 +44,11 @@ const MenuButton = styled.button`
   justify-content: flex-end;
 `;
 
+const HeaderTypography = styled(Typography)`
+  @media screen and (max-width: 330px) {
+    font-size: 21px !important;
+  }
+`;
 export class Header extends React.Component<
   {
     setCurrentIndex: (index: number) => void;
@@ -65,32 +72,35 @@ export class Header extends React.Component<
       <>
         <StyledRow>
           <Mobile>
-            <Typography variant="h2">sometimes paul reads.</Typography>
+            <HeaderTypography variant="h2">
+              sometimes paul reads.
+            </HeaderTypography>
           </Mobile>
           <TabletAndAbove>
-            <Typography variant="h1">sometimes paul reads.</Typography>
+            <HeaderTypography variant="h1">
+              sometimes paul reads.
+            </HeaderTypography>
           </TabletAndAbove>
 
-          <MenuButton onClick={this.toggleOpen}>
+          <MenuButton onClick={this.toggleOpen} name="menu">
             <Hamburger open={this.state.open} />
           </MenuButton>
         </StyledRow>
         {this.state.open ? (
           <OptionsContainer>
             {bookData.map((book, index) => (
-              <button
+              <BookRow
+                role="button"
                 key={book.name}
                 onClick={() => {
                   this.props.setCurrentIndex(index);
                   this.toggleOpen();
                 }}
               >
-                <BookRow>
-                  <Typography variant="h2" align="right">
-                    {book.name}
-                  </Typography>
-                </BookRow>
-              </button>
+                <Typography variant="h2" align="right">
+                  {book.name}
+                </Typography>
+              </BookRow>
             ))}
           </OptionsContainer>
         ) : null}
