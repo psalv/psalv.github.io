@@ -3,7 +3,15 @@ import * as React from "react";
 import SwipeableViews from "react-swipeable-views";
 import { virtualize } from "react-swipeable-views-utils";
 import styled from "styled-components";
-import { bookData } from "./bookData";
+import { bookData } from "./data/bookData";
+import {
+  DesktopAndAbove,
+  TABLET_BREAKPOINT,
+  TabletAndBelow,
+} from "./components/Responsive";
+import { Column, Row, Spacer } from "./components/Layout";
+import { boxShadow } from "./common";
+import { Typography } from "./components/Typography";
 
 const StyledSwipeableViews = styled(SwipeableViews)`
   width: 100%;
@@ -14,15 +22,60 @@ export function circularMod(a: number, b: number): number {
   return ((a % b) + b) % b;
 }
 
+const BookCard = styled(Column)`
+  ${boxShadow};
+  padding: 16px;
+  width: 400px;
+  height: 582px;
+  align-items: center;
+
+  @media screen and (max-width: ${TABLET_BREAKPOINT - 1}px) {
+    width: 350px;
+    height: 509px;
+  }
+`;
+
+const BookCover = styled.img`
+  width: 100%;
+`;
+
+const ContentWrapper = styled(Row)`
+  padding: 20px 0;
+  justify-content: center;
+`;
+
+const Divider = styled.div`
+  width: 90%;
+  border-bottom: 1px solid #ccc;
+`;
+
+interface IProps {
+  setCurrentIndex: (index: number) => void;
+  currentIndex: number;
+}
+
 export class Carousel extends React.Component<
-  {
-    setCurrentIndex: (index: number) => void;
-    currentIndex: number;
-  },
+  IProps,
   { preloadedIndices: Set<number> }
 > {
   state = {
     preloadedIndices: new Set<number>(),
+  };
+
+  componentDidMount() {
+    this.preloadImagesBasedOnCurrentIndex();
+  }
+
+  componentDidUpdate(prevProps: IProps) {
+    if (this.props.currentIndex !== prevProps.currentIndex) {
+      this.preloadImagesBasedOnCurrentIndex();
+    }
+  }
+
+  preloadImagesBasedOnCurrentIndex = () => {
+    const index = this.props.currentIndex;
+    const indicesMap = [-2, -1, 1, 2];
+    this.preloadImages(indicesMap.map((i) => i + index));
   };
 
   preloadImages = (indices: number[]) => {
@@ -34,7 +87,10 @@ export class Carousel extends React.Component<
       }
       this.state.preloadedIndices.add(index);
       const img = new Image();
-      img.src = bookData[index]?.imageUrl;
+      if (!bookData[index]) {
+        return;
+      }
+      img.src = bookData[index].imageUrl;
     });
   };
 
@@ -42,21 +98,50 @@ export class Carousel extends React.Component<
     this.props.setCurrentIndex(index);
   };
 
+  getBookCards = (index: number) => {
+    const bookInfo = bookData[index];
+    return (
+      <>
+        <BookCard>
+          <BookCover src={bookInfo.imageUrl} />
+        </BookCard>
+        <Spacer size={32} />
+        <BookCard>
+          <Spacer size={24} />
+          <Typography bold style={{ textTransform: "uppercase" }}>
+            {bookInfo.name}
+          </Typography>
+          <Spacer size={24} />
+          <Divider />
+          <Spacer size={24} />
+          <Typography align="center">{bookInfo.review}</Typography>
+        </BookCard>
+      </>
+    );
+  };
+
   slideRenderer = (params: any) => {
     const currentIndex = circularMod(params.index, bookData.length);
     return (
-      <React.Fragment key={params.index}>
-        {bookData[currentIndex]?.name}
-      </React.Fragment>
+      <ContentWrapper key={params.index}>
+        <TabletAndBelow>
+          <Column>{this.getBookCards(currentIndex)}</Column>
+        </TabletAndBelow>
+        <DesktopAndAbove>
+          <Row>{this.getBookCards(currentIndex)}</Row>
+        </DesktopAndAbove>
+      </ContentWrapper>
     );
   };
 
   render() {
+    console.log(this.props.currentIndex);
     return (
       <VirtualizedSwipeableViews
         index={this.props.currentIndex}
         onChangeIndex={this.handleChangeSlideIndex}
         slideRenderer={this.slideRenderer}
+        resistance
       />
     );
   }
