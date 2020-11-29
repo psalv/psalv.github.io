@@ -14,9 +14,6 @@ const CarouselButton = styled.button<{ left: boolean }>`
   justify-content: center;
   border-radius: 50%;
   z-index: 1;
-  @media screen and (max-width: 748px) {
-    display: none;
-  }
 
   position: absolute;
   top: calc(50% - 20px);
@@ -28,6 +25,11 @@ const CarouselButton = styled.button<{ left: boolean }>`
       : css`
           right: 32px;
         `};
+
+  @media screen and (max-width: 748px) {
+    opacity: 0;
+    top: -50px;
+  }
 `;
 
 const ContentWrapper = styled(Column)`
@@ -70,12 +72,14 @@ export class Content extends React.Component<{
           currentIndex={this.props.currentIndex}
         />
         <CarouselButton
+          name="previous review"
           left
           onClick={() =>
             this.props.setCurrentIndex(this.props.currentIndex - 1)
           }
         />
         <CarouselButton
+          name="next review"
           left={false}
           onClick={() =>
             this.props.setCurrentIndex(this.props.currentIndex + 1)

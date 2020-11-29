@@ -3,7 +3,7 @@ import * as React from "react";
 import SwipeableViews from "react-swipeable-views";
 import { virtualize } from "react-swipeable-views-utils";
 import styled from "styled-components";
-import { bookData } from "./data/bookData";
+import { bookData, processReview } from "./data/bookData";
 import {
   DesktopAndAbove,
   TABLET_BREAKPOINT,
@@ -100,6 +100,7 @@ export class Carousel extends React.Component<
 
   getBookCards = (index: number) => {
     const bookInfo = bookData[index];
+    const review = processReview(bookInfo.review);
     return (
       <>
         <BookCard>
@@ -108,13 +109,17 @@ export class Carousel extends React.Component<
         <Spacer size={32} />
         <BookCard>
           <Spacer size={24} />
-          <Typography bold style={{ textTransform: "uppercase" }}>
+          <Typography
+            align="center"
+            bold
+            style={{ textTransform: "uppercase" }}
+          >
             {bookInfo.name}
           </Typography>
           <Spacer size={24} />
           <Divider />
           <Spacer size={24} />
-          <Typography align="center">{bookInfo.review}</Typography>
+          <Typography align="center">{review}</Typography>
         </BookCard>
       </>
     );

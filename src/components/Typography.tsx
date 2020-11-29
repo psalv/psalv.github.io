@@ -23,7 +23,9 @@ const stylesFromVariant = {
 
 export const Typography = styled.div<ITypographyProps>`
   font-family: ${(props) =>
-    props.variant !== "p" ? '"Raleway", sans-serif' : '"Roboto", sans-serif'};
+    (props.variant || "p") !== "p"
+      ? '"Raleway", sans-serif'
+      : '"Roboto", sans-serif'};
   font-size: ${(props) => stylesFromVariant[props.variant || "p"].fontSize}px;
   line-height: ${(props) =>
     stylesFromVariant[props.variant || "p"].lineHeight}px;
