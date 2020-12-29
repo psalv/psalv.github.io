@@ -38,6 +38,19 @@ export const processReview = (review: IReview) => {
 
 export const bookData: IBookData[] = [
   {
+    name: "Masters of Doom",
+    imageUrl: "https://i.imgur.com/1Bw5fL9.png",
+    review: {
+      year: 2020,
+      lines: [
+        "A modern Western.",
+        "An incredible account of grit, determination, and passion, set during the world's technological coming of age.",
+        "A journey showcasing jubilance turned arrogance, and the effect of uncompromising idealism.",
+        "This true story contextualizes modern computing and gaming, and it’s prevailing forces.",
+      ],
+    },
+  },
+  {
     name: "Shōgun",
     imageUrl: "https://i.imgur.com/PoWLP4U.png",
     review: {
