@@ -22,7 +22,7 @@ export function circularMod(a: number, b: number): number {
   return ((a % b) + b) % b;
 }
 
-const BookCard = styled(Column)`
+const BookCard = styled(Column)<{imageCard: boolean}>`
   ${boxShadow};
   padding: 16px;
   width: 400px;
@@ -36,7 +36,7 @@ const BookCard = styled(Column)`
     
   @media screen and (max-width: ${349}px) {
     width: 305px;
-    height: 509px;
+    height: ${props => props.imageCard ? 443 : 509}px;
   }
 `;
 
@@ -108,11 +108,11 @@ export class Carousel extends React.Component<
     const review = processReview(bookInfo.review);
     return (
       <>
-        <BookCard>
+        <BookCard imageCard>
           <BookCover src={bookInfo.imageUrl} />
         </BookCard>
         <Spacer size={32} />
-        <BookCard>
+        <BookCard imageCard={false}>
           <Spacer size={24} />
           <Typography
             align="center"
@@ -125,6 +125,7 @@ export class Carousel extends React.Component<
           <Divider />
           <Spacer size={24} />
           <Typography align="center">{review}</Typography>
+          <Spacer size={24} />
         </BookCard>
       </>
     );

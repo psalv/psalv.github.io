@@ -45,8 +45,8 @@ export const bookData: IBookData[] = [
       lines: [
         "A modern Western.",
         "An incredible account of grit, determination, and passion, set during the world's technological coming of age.",
-        "This exploration of new frontiers showcases jubilance turned arrogance, and the effects of uncompromising idealism.",
-        "A true story that contextualizes modern computing and gaming, and it’s prevailing forces.",
+        "Jubilance turns to arrogance in this exploration into new frontiers and the effects of uncompromising idealism.",
+        "This true story contextualizes modern computing and gaming, and it’s prevailing forces.",
       ],
     },
   },
