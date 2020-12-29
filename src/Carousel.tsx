@@ -146,7 +146,6 @@ export class Carousel extends React.Component<
   };
 
   render() {
-    console.log(this.props.currentIndex);
     return (
       <VirtualizedSwipeableViews
         index={this.props.currentIndex}
