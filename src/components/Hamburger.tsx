@@ -3,21 +3,6 @@ import styled, { css } from "styled-components";
 
 const deg = 40;
 
-const Container = styled.div`
-  position: relative;
-  min-width: 20px;
-  min-height: 14px;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: 0.5s ease-in-out;
-  -moz-transition: 0.5s ease-in-out;
-  -o-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
-  cursor: pointer;
-`;
-
 const Span = styled.span<IProps>`
   display: block;
   position: absolute;
@@ -35,6 +20,28 @@ const Span = styled.span<IProps>`
   -moz-transition: 0.25s ease-in-out;
   -o-transition: 0.25s ease-in-out;
   transition: 0.25s ease-in-out;
+`;
+
+const Container = styled.div`
+
+  &:hover {
+    ${Span} {
+      background: #000 !important;
+    }
+  }
+  
+  position: relative;
+  min-width: 20px;
+  min-height: 14px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
 `;
 
 interface IProps {

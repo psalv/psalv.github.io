@@ -1,17 +1,31 @@
 import * as React from "react";
-import styled from "styled-components";
-import { Column, Row } from "./components/Layout";
+import styled, { css } from "styled-components";
+import { Column, Row, Spacer } from "./components/Layout";
 import { headerHeight } from "./common";
 import { Typography } from "./components/Typography";
 import { Hamburger } from "./components/Hamburger";
 import { bookData } from "./data/bookData";
 import { Mobile, TabletAndAbove } from "./components/Responsive";
+import { Bell } from "./components/Bell";
 
-const StyledRow = styled(Row)`
+const rowPadding = css`
+  padding: 0 32px;
+`;
+const HeaderRow = styled(Row)`
   height: ${headerHeight}px;
   align-items: center;
-  padding: 0 32px;
+  ${rowPadding};
   justify-content: space-between;
+`;
+
+const HoverTypography = styled(Typography)`
+  &:hover {
+    color: #000
+  }
+`
+const SubscribeLink = styled.a`
+  display: inherit;
+  padding: 10px 0 10px 10px;
 `;
 
 const OptionsContainer = styled(Column)`
@@ -46,7 +60,7 @@ const MenuButton = styled.button`
 
 const HeaderTypography = styled(Typography)`
   @media screen and (max-width: 330px) {
-    font-size: 21px !important;
+    font-size: 18px !important;
   }
 `;
 export class Header extends React.Component<{
@@ -57,7 +71,7 @@ export class Header extends React.Component<{
   render() {
     return (
       <>
-        <StyledRow>
+        <HeaderRow>
           <Mobile>
             <HeaderTypography variant="h2">
               sometimes paul reads.
@@ -69,10 +83,29 @@ export class Header extends React.Component<{
             </HeaderTypography>
           </TabletAndAbove>
 
-          <MenuButton onClick={this.props.toggleHeaderOpen} name="menu">
-            <Hamburger open={this.props.isHeaderOpen} />
-          </MenuButton>
-        </StyledRow>
+          <Row style={{ alignItems: "center" }}>
+            <SubscribeLink
+              target="_blank"
+              href="https://forms.gle/dVHaTAv1GiqGUJh4A"
+            >
+              <TabletAndAbove>
+                <HoverTypography variant="h2" align="right">
+                  Subscribe
+                </HoverTypography>
+              </TabletAndAbove>
+              <Mobile>
+                <Bell size={20} />
+              </Mobile>
+            </SubscribeLink>
+            <TabletAndAbove>
+              <Spacer size={24} />
+            </TabletAndAbove>
+            <MenuButton onClick={this.props.toggleHeaderOpen} name="menu">
+              <Hamburger open={this.props.isHeaderOpen} />
+            </MenuButton>
+          </Row>
+        </HeaderRow>
+
         {this.props.isHeaderOpen ? (
           <OptionsContainer>
             {bookData.map((book, index) => (

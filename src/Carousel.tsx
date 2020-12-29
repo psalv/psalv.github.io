@@ -33,6 +33,11 @@ const BookCard = styled(Column)`
     width: 350px;
     height: 509px;
   }
+    
+  @media screen and (max-width: ${349}px) {
+    width: 305px;
+    height: 509px;
+  }
 `;
 
 const BookCover = styled.img`

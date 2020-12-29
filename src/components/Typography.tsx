@@ -13,7 +13,7 @@ const stylesFromVariant = {
   },
   h2: {
     lineHeight: 32,
-    fontSize: 24,
+    fontSize: 23,
   },
   h1: {
     lineHeight: 40,
