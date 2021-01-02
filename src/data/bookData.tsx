@@ -38,6 +38,19 @@ export const processReview = (review: IReview) => {
 
 export const bookData: IBookData[] = [
   {
+    name: "Ready Player Two",
+    imageUrl: "https://i.imgur.com/H9AkyTM.png",
+    review: {
+      year: 2021,
+      lines: [
+        "Fast-paced and enjoyable.",
+        "A much-anticipated revisiting of Cline's futuristic virtual world.",
+        "Incredibly detailed, with a fascinating hook, and wonderful settings—a treat for the nostalgic.",
+        "Despite some shortcomings in the narrative, this was an entertaining adventure.",
+      ],
+    },
+  },
+  {
     name: "Masters of Doom",
     imageUrl: "https://i.imgur.com/1Bw5fL9.png",
     review: {
