@@ -24,7 +24,7 @@ const preventOrphanWords = (s: string) => {
 export const processReview = (review: IReview) => {
   return (
     <>
-      <b>{review.year}.</b>
+      <b>{review.year}</b>
       {review.lines.map((line, index) => (
         <React.Fragment key={index}>
           <br />
