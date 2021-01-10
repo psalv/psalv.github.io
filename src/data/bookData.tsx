@@ -38,6 +38,19 @@ export const processReview = (review: IReview) => {
 
 export const bookData: IBookData[] = [
   {
+    name: "The Richest Man in Babylon",
+    imageUrl: "https://i.imgur.com/2MzJViU.png",
+    review: {
+      year: 2021,
+      lines: [
+        "Relevant and accessible.",
+        "A unique marriage of advice and history.",
+        "Sensible ideas are reinforced through clever narrative.",
+        "A wonderful reminder of the compounding nature of patience, and the value of wisdom."
+      ],
+    },
+  },
+  {
     name: "Ready Player Two",
     imageUrl: "https://i.imgur.com/H9AkyTM.png",
     review: {
