@@ -38,6 +38,19 @@ export const processReview = (review: IReview) => {
 
 export const bookData: IBookData[] = [
   {
+    name: "Rendezvous with Rama",
+    imageUrl: "https://i.imgur.com/0rOOg4d.png",
+    review: {
+      year: 2021,
+      lines: [
+        "Fantastically executed.",
+        "A gripping and hopeful narrative about mankind and their place in the universe.",
+        "Arthur C. Clarke is not afraid to imagine big, and it's contagious.",
+        "Succinct writing paired with an awe-inspiring setting made this a hard one to put down."
+      ],
+    },
+  },
+  {
     name: "The Richest Man in Babylon",
     imageUrl: "https://i.imgur.com/2MzJViU.png",
     review: {
