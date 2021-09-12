@@ -38,6 +38,19 @@ export const processReview = (review: IReview) => {
 
 export const bookData: IBookData[] = [
   {
+    name: "The Dark Elf Trilogy",
+    imageUrl: "https://i.imgur.com/veLfL27.png",
+    review: {
+      year: 2021,
+      lines: [
+        "Endlessly exciting, completely compelling, and thoroughly immersive.",
+        "An outstanding fantasy trilogy that explores virtue, goodness, and pre-conceptions.",
+        "Stark contrast and masterfully placed details breathe life to this universe.",
+        "R.A Salvatore’s fast-paced style is truly addictive."
+      ],
+    },
+  },
+  {
     name: "Rendezvous with Rama",
     imageUrl: "https://i.imgur.com/0rOOg4d.png",
     review: {
