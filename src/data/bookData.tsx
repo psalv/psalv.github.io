@@ -38,6 +38,19 @@ export const processReview = (review: IReview) => {
 
 export const bookData: IBookData[] = [
   {
+    name: "Shoe Dog",
+    imageUrl: "https://i.imgur.com/V3Sl7ia.png",
+    review: {
+      year: 2021,
+      lines: [
+        "Incredibly honest and thoroughly exceptional.",
+        "An absorbing account of grit, dedication, and drive.",
+        "A manual for overcoming adversity and finding one’s purpose.",
+        "Phil Knight demystifies success and the difficult paths and decisions that lead to it."
+      ],
+    },
+  },
+  {
     name: "The Dark Elf Trilogy",
     imageUrl: "https://i.imgur.com/veLfL27.png",
     review: {
