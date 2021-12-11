@@ -35,6 +35,12 @@ export const processReview = (review: IReview) => {
     </>
   );
 };
+/*
+Images are 600x900 pixels
+
+Into the wild: https://i.imgur.com/q5SOhrI.png
+What got you here won't get you there: https://i.imgur.com/5Jt0lva.png
+ */
 
 export const bookData: IBookData[] = [
   {
