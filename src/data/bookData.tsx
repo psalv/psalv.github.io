@@ -38,6 +38,19 @@ export const processReview = (review: IReview) => {
 
 export const bookData: IBookData[] = [
   {
+    name: "Ender's Game",
+    imageUrl: "https://i.imgur.com/GM6dPsR.png",
+    review: {
+      year: 2021,
+      lines: [
+        "Chaotic exhilaration.",
+        "Impossible hardships underscore mankind’s unlimited potential.",
+        "The burden is overwhelming, the victories are visceral, and the stress is palpable.",
+        "Truly wonderful writing complemented by powerful ideas."
+      ],
+    },
+  },
+  {
     name: "Shoe Dog",
     imageUrl: "https://i.imgur.com/V3Sl7ia.png",
     review: {
