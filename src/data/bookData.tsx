@@ -38,11 +38,23 @@ export const processReview = (review: IReview) => {
 /*
 Images are 600x900 pixels
 
-Into the wild: https://i.imgur.com/q5SOhrI.png
 What got you here won't get you there: https://i.imgur.com/5Jt0lva.png
  */
 
 export const bookData: IBookData[] = [
+  {
+    name: "Into the Wild",
+    imageUrl: "https://i.imgur.com/q5SOhrI.png",
+    review: {
+      year: 2021,
+      lines: [
+        "Determination, jubilation, and introspection.",
+        "An investigation into societal expectations and finding purpose.",
+        "Relatable emotions in unrelatable situations helps the reader revisit preconceptions.",
+        "The authentic optimism of youth."
+      ],
+    },
+  },
   {
     name: "Ender's Game",
     imageUrl: "https://i.imgur.com/GM6dPsR.png",
