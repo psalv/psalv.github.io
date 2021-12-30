@@ -43,6 +43,18 @@ What got you here won't get you there: https://i.imgur.com/5Jt0lva.png
 
 export const bookData: IBookData[] = [
   {
+    name: "The Death of Ivan Ilyich",
+    imageUrl: "https://i.imgur.com/w8hUuxg.png",
+    review: {
+      year: 2021,
+      lines: [
+        "Hopelessness and dissatisfaction.",
+        "The tale of a painful and unfulfilling life chasing expectations.",
+        "Despair turns to fear, and grows into clarity as Tolstoy confronts mortality and purpose."
+      ],
+    },
+  },
+  {
     name: "Into the Wild",
     imageUrl: "https://i.imgur.com/q5SOhrI.png",
     review: {
