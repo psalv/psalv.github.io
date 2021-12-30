@@ -140,8 +140,8 @@ export const bookData: IBookData[] = [
       lines: [
         "Fast-paced and enjoyable.",
         "A much-anticipated revisiting of Cline's futuristic virtual world.",
-        "Incredibly detailed, with a fascinating hook, and wonderful settings—a treat for the nostalgic.",
-        "Despite some shortcomings in the narrative, this was an entertaining adventure.",
+        "Heavily reliant on nostalgia and a fascinating, yet unoriginal, hook.",
+        "If you can get past shortcomings in the narrative, this is an entertaining adventure.",
       ],
     },
   },
