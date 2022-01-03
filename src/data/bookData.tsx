@@ -43,6 +43,19 @@ What got you here won't get you there: https://i.imgur.com/5Jt0lva.png
 
 export const bookData: IBookData[] = [
   {
+    name: "Project Hail Mary",
+    imageUrl: "https://i.imgur.com/k1BgNxX.png",
+    review: {
+      year: 2022,
+      lines: [
+        "Sensational and enthralling.",
+        "Tremendously written, and always captivating.",
+        "A charmingly idealistic take on solidarity and our ability to overcome adversity.",
+        "Weir is a master of first person problem solving narratives."
+      ],
+    },
+  },
+  {
     name: "The Death of Ivan Ilyich",
     imageUrl: "https://i.imgur.com/w8hUuxg.png",
     review: {
