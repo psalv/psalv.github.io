@@ -37,11 +37,22 @@ export const processReview = (review: IReview) => {
 };
 /*
 Images are 600x900 pixels
-
-What got you here won't get you there: https://i.imgur.com/5Jt0lva.png
  */
 
 export const bookData: IBookData[] = [
+  {
+    name: "What Got You Here Won't Get You There",
+    imageUrl: "https://i.imgur.com/5Jt0lva.png",
+    review: {
+      year: 2022,
+      lines: [
+        "Sensible, honest, enlightening.",
+        "Examines barriers to effective leadership, and the steps to grow past them.",
+        "The lessons felt relevant and particularly well-timed.",
+        "The expertise and experience of Goldsmith is overwhelming, each chapter contains worthwhile insights."
+      ],
+    },
+  },
   {
     name: "Project Hail Mary",
     imageUrl: "https://i.imgur.com/k1BgNxX.png",
