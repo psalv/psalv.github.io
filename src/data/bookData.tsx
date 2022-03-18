@@ -41,6 +41,18 @@ Images are 600x900 pixels
 
 export const bookData: IBookData[] = [
   {
+    name: "The Godfather",
+    imageUrl: "https://i.imgur.com/J2ykYft.png",
+    review: {
+      year: 2022,
+      lines: [
+        "Cool reasoning, masterful planning, and unwavering resolve.",
+        "Interweaving stories are used to form an expansive world with diverse stories and constant fascination.",
+        "In the world of organized crime, respect and friendship live above all else."
+      ],
+    },
+  },
+  {
     name: "What Got You Here Won't Get You There",
     imageUrl: "https://i.imgur.com/5Jt0lva.png",
     review: {
