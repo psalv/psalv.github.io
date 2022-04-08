@@ -47,7 +47,7 @@ export const bookData: IBookData[] = [
       year: 2022,
       lines: [
         "Cool reasoning, masterful planning, and unwavering resolve.",
-        "Interweaving stories are used to form an expansive world with diverse stories and constant fascination.",
+        "Interweaving stories are used to form an expansive world with diverse perspectives and constant fascination.",
         "In the world of organized crime, respect and friendship live above all else."
       ],
     },
