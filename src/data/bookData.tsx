@@ -1,13 +1,15 @@
 import * as React from "react";
+import styled from "styled-components";
 
 interface IBookData {
   name: string;
   imageUrl: string;
   review: IReview;
+  yearRead: number;
 }
 
 interface IReview {
-  year: number;
+  yearWritten: number;
   lines: string[];
 }
 
@@ -21,10 +23,19 @@ const preventOrphanWords = (s: string) => {
   return sArray.join("");
 };
 
-export const processReview = (review: IReview) => {
+const YearTypography = styled.b`
+  right: 16px;
+  bottom: 16px;
+  position: absolute;
+  color: #aaaa;
+`;
+
+export const processReview = (bookInfo: IBookData) => {
+  const { review } = bookInfo;
   return (
     <>
-      <b>{review.year}</b>
+      <b>{review.yearWritten}</b>
+      <YearTypography>{bookInfo.yearRead}</YearTypography>
       {review.lines.map((line, index) => (
         <React.Fragment key={index}>
           <br />
@@ -35,144 +46,155 @@ export const processReview = (review: IReview) => {
     </>
   );
 };
+
 /*
 Images are 600x900 pixels
  */
-
 export const bookData: IBookData[] = [
   {
     name: "The Godfather",
     imageUrl: "https://i.imgur.com/J2ykYft.png",
+    yearRead: 2022,
     review: {
-      year: 2022,
+      yearWritten: 1969,
       lines: [
         "Cool reasoning, masterful planning, and unwavering resolve.",
         "Interweaving stories are used to form an expansive world with diverse perspectives and constant fascination.",
-        "In the world of organized crime, respect and friendship live above all else."
+        "In the world of organized crime, respect and friendship live above all else.",
       ],
     },
   },
   {
     name: "What Got You Here Won't Get You There",
     imageUrl: "https://i.imgur.com/5Jt0lva.png",
+    yearRead: 2022,
     review: {
-      year: 2022,
+      yearWritten: 2007,
       lines: [
         "Sensible, honest, enlightening.",
         "Examines barriers to effective leadership, and the steps to grow past them.",
         "The lessons felt relevant and particularly well-timed.",
-        "The expertise and experience of Goldsmith is overwhelming, each chapter contains worthwhile insights."
+        "The expertise and experience of Goldsmith is overwhelming, each chapter contains worthwhile insights.",
       ],
     },
   },
   {
     name: "Project Hail Mary",
     imageUrl: "https://i.imgur.com/k1BgNxX.png",
+    yearRead: 2022,
     review: {
-      year: 2022,
+      yearWritten: 2021,
       lines: [
         "Sensational and enthralling.",
         "Tremendously written, and always captivating.",
         "A charmingly idealistic take on solidarity and our ability to overcome adversity.",
-        "Weir is a master of first person problem solving narratives."
+        "Weir is a master of first person problem solving narratives.",
       ],
     },
   },
   {
     name: "The Death of Ivan Ilyich",
     imageUrl: "https://i.imgur.com/w8hUuxg.png",
+    yearRead: 2021,
     review: {
-      year: 2021,
+      yearWritten: 1886,
       lines: [
         "Hopelessness and dissatisfaction.",
         "The tale of a painful and unfulfilling life chasing expectations.",
-        "Despair turns to fear, and grows into clarity as Tolstoy confronts mortality and purpose."
+        "Despair turns to fear, and grows into clarity as Tolstoy confronts mortality and purpose.",
       ],
     },
   },
   {
     name: "Into the Wild",
     imageUrl: "https://i.imgur.com/q5SOhrI.png",
+    yearRead: 2021,
     review: {
-      year: 2021,
+      yearWritten: 1996,
       lines: [
         "Determination, jubilation, and introspection.",
         "An investigation into societal expectations and finding purpose.",
         "Relatable emotions in unrelatable situations helps the reader revisit preconceptions.",
-        "The authentic optimism of youth."
+        "The authentic optimism of youth.",
       ],
     },
   },
   {
     name: "Ender's Game",
     imageUrl: "https://i.imgur.com/GM6dPsR.png",
+    yearRead: 2021,
     review: {
-      year: 2021,
+      yearWritten: 1985,
       lines: [
         "Chaotic exhilaration.",
         "Impossible hardships underscore mankind’s unlimited potential.",
         "The burden is overwhelming, the victories are visceral, and the stress is palpable.",
-        "Truly wonderful writing complemented by powerful ideas."
+        "Truly wonderful writing complemented by powerful ideas.",
       ],
     },
   },
   {
     name: "Shoe Dog",
     imageUrl: "https://i.imgur.com/V3Sl7ia.png",
+    yearRead: 2021,
     review: {
-      year: 2021,
+      yearWritten: 2016,
       lines: [
         "Incredibly honest and thoroughly exceptional.",
         "An absorbing account of grit, dedication, and drive.",
         "A manual for overcoming adversity and finding one’s purpose.",
-        "Phil Knight demystifies success and the difficult paths and decisions that lead to it."
+        "Phil Knight demystifies success and the difficult paths and decisions that lead to it.",
       ],
     },
   },
   {
     name: "The Dark Elf Trilogy",
     imageUrl: "https://i.imgur.com/veLfL27.png",
+    yearRead: 2021,
     review: {
-      year: 2021,
+      yearWritten: 1990,
       lines: [
         "Endlessly exciting, completely compelling, and thoroughly immersive.",
         "An outstanding fantasy trilogy that explores virtue, goodness, and pre-conceptions.",
         "Stark contrast and masterfully placed details breathe life to this universe.",
-        "R.A Salvatore’s fast-paced style is truly addictive."
+        "R.A Salvatore’s fast-paced style is truly addictive.",
       ],
     },
   },
   {
     name: "Rendezvous with Rama",
     imageUrl: "https://i.imgur.com/0rOOg4d.png",
+    yearRead: 2021,
     review: {
-      year: 2021,
+      yearWritten: 1973,
       lines: [
         "Fantastically executed.",
         "A gripping and hopeful narrative about mankind and their place in the universe.",
         "Arthur C. Clarke is not afraid to imagine big, and it's contagious.",
-        "Succinct writing paired with an awe-inspiring setting made this a hard one to put down."
+        "Succinct writing paired with an awe-inspiring setting made this a hard one to put down.",
       ],
     },
   },
   {
     name: "The Richest Man in Babylon",
     imageUrl: "https://i.imgur.com/2MzJViU.png",
+    yearRead: 2021,
     review: {
-      year: 2021,
+      yearWritten: 1926,
       lines: [
         "Relevant and accessible.",
         "A unique marriage of advice and history.",
         "Sensible ideas are reinforced through clever narrative.",
-        "A wonderful reminder of the compounding nature of patience, and the value of wisdom."
+        "A wonderful reminder of the compounding nature of patience, and the value of wisdom.",
       ],
     },
   },
   {
     name: "Ready Player Two",
     imageUrl: "https://i.imgur.com/H9AkyTM.png",
+    yearRead: 2021,
     review: {
-      year: 2021,
+      yearWritten: 2020,
       lines: [
         "Fast-paced and enjoyable.",
         "A much-anticipated revisiting of Cline's futuristic virtual world.",
@@ -184,8 +206,9 @@ export const bookData: IBookData[] = [
   {
     name: "Masters of Doom",
     imageUrl: "https://i.imgur.com/1Bw5fL9.png",
+    yearRead: 2020,
     review: {
-      year: 2020,
+      yearWritten: 2003,
       lines: [
         "A modern Western.",
         "An incredible account of grit, determination, and passion, set during the world's technological coming of age.",
@@ -197,8 +220,9 @@ export const bookData: IBookData[] = [
   {
     name: "Shōgun",
     imageUrl: "https://i.imgur.com/PoWLP4U.png",
+    yearRead: 2020,
     review: {
-      year: 2020,
+      yearWritten: 1975,
       lines: [
         "Completely immersive. Truly exceptional.",
         "More than an adventure, an exploration into our preconceptions and capabilities.",
@@ -210,8 +234,9 @@ export const bookData: IBookData[] = [
   {
     name: "Armada",
     imageUrl: "https://i.imgur.com/Ze9ai8i.png",
+    yearRead: 2020,
     review: {
-      year: 2020,
+      yearWritten: 2015,
       lines: [
         "Constant excitement.",
         "A fast paced, and enjoyable doomsday novel.",
@@ -222,8 +247,9 @@ export const bookData: IBookData[] = [
   {
     name: "Galápagos",
     imageUrl: "https://i.imgur.com/ZBoIFB7.png",
+    yearRead: 2020,
     review: {
-      year: 2020,
+      yearWritten: 1985,
       lines: [
         "An insightful idea.",
         "Vonnegut argues our intelligence as our downfall in a very unusual form of storytelling.",
@@ -234,8 +260,9 @@ export const bookData: IBookData[] = [
   {
     name: "Ready Player One",
     imageUrl: "https://i.imgur.com/vQqznp2.png",
+    yearRead: 2020,
     review: {
-      year: 2020,
+      yearWritten: 2011,
       lines: [
         "Entirely captivating.",
         "A fantastic adventure that I couldn't put down.",
@@ -247,8 +274,9 @@ export const bookData: IBookData[] = [
   {
     name: "Starship Troopers",
     imageUrl: "https://i.imgur.com/u8XbOTm.png",
+    yearRead: 2020,
     review: {
-      year: 2020,
+      yearWritten: 1959,
       lines: [
         "Perceptive and intriguing.",
         "A tale of personal growth and duty.",
@@ -260,8 +288,9 @@ export const bookData: IBookData[] = [
   {
     name: "Elevation",
     imageUrl: "https://i.imgur.com/XsYsWZz.png",
+    yearRead: 2018,
     review: {
-      year: 2018,
+      yearWritten: 2018,
       lines: [
         "Incredibly unique.",
         "An exceptional story like none I have ever had the pleasure of reading before.",
@@ -272,8 +301,9 @@ export const bookData: IBookData[] = [
   {
     name: "The Checklist Manifesto",
     imageUrl: "https://i.imgur.com/TlAABXM.png",
+    yearRead: 2018,
     review: {
-      year: 2018,
+      yearWritten: 2009,
       lines: [
         "Valuable insight.",
         "This methodical investigation into how we can mitigate preventable error in our lives will leave you wishing you had picked it up sooner.",
@@ -284,8 +314,9 @@ export const bookData: IBookData[] = [
   {
     name: "A Life in Parts",
     imageUrl: "https://i.imgur.com/Ephuin9.png",
+    yearRead: 2018,
     review: {
-      year: 2018,
+      yearWritten: 2016,
       lines: [
         "Truly exceptional.",
         "A fascinating life filled with struggle, self-discovery, and art.",
@@ -297,8 +328,9 @@ export const bookData: IBookData[] = [
   {
     name: "Spock's World",
     imageUrl: "https://i.imgur.com/RwEAzsv.png",
+    yearRead: 2018,
     review: {
-      year: 2018,
+      yearWritten: 1988,
       lines: [
         "Marvelous.",
         "A completely compelling account combining history and narrative.",
@@ -310,8 +342,9 @@ export const bookData: IBookData[] = [
   {
     name: "The Lost World",
     imageUrl: "https://i.imgur.com/pdgPrab.png",
+    yearRead: 2017,
     review: {
-      year: 2017,
+      yearWritten: 1912,
       lines: [
         "Unreachingly wonderful.",
         "An enjoyable read in an undeniably exciting world.",
@@ -322,8 +355,9 @@ export const bookData: IBookData[] = [
   {
     name: "The Island of Doctor Moreau",
     imageUrl: "https://i.imgur.com/VVH4C9x.png",
+    yearRead: 2017,
     review: {
-      year: 2017,
+      yearWritten: 1896,
       lines: [
         "Curious fun.",
         "An adventure in an utterly unique setting.",
@@ -335,8 +369,9 @@ export const bookData: IBookData[] = [
   {
     name: "The Invisible Man",
     imageUrl: "https://i.imgur.com/pVzQ2bx.png",
+    yearRead: 2017,
     review: {
-      year: 2017,
+      yearWritten: 1897,
       lines: [
         "Anger, and anguish.",
         "A portrayal of a wonderfully difficult situation and the accompanying struggle to overcome it.",
@@ -347,8 +382,9 @@ export const bookData: IBookData[] = [
   {
     name: "The Diamond as Big as the Ritz",
     imageUrl: "https://i.imgur.com/qSu7LJy.png",
+    yearRead: 2017,
     review: {
-      year: 2017,
+      yearWritten: 1922,
       lines: [
         "Seductive.",
         "Glamour portrayed through ultimate splendour.",
@@ -359,8 +395,9 @@ export const bookData: IBookData[] = [
   {
     name: "The Bell Jar",
     imageUrl: "https://i.imgur.com/4AXaFAD.png",
+    yearRead: 2017,
     review: {
-      year: 2017,
+      yearWritten: 1963,
       lines: [
         "Hollow.",
         "An intentionally unpleasant account of a quietly painful world.",
@@ -371,8 +408,9 @@ export const bookData: IBookData[] = [
   {
     name: "Solving the Procrastination Puzzle",
     imageUrl: "https://i.imgur.com/3viZLRS.png",
+    yearRead: 2017,
     review: {
-      year: 2017,
+      yearWritten: 2010,
       lines: [
         "Necessarily honest.",
         "Does a wonderful job of helping the reader to understand their own behaviour and tactfully present alternatives.",
@@ -383,8 +421,9 @@ export const bookData: IBookData[] = [
   {
     name: "Pride and Prejudice",
     imageUrl: "https://i.imgur.com/T7P4Sfk.png",
+    yearRead: 2017,
     review: {
-      year: 2017,
+      yearWritten: 1813,
       lines: [
         "Giddy enticement.",
         "A book about intrigue, and preconceptions.",
@@ -396,8 +435,9 @@ export const bookData: IBookData[] = [
   {
     name: "Jurassic Park",
     imageUrl: "https://i.imgur.com/HXiQlHP.png",
+    yearRead: 2017,
     review: {
-      year: 2017,
+      yearWritten: 1990,
       lines: [
         "Looming tension, and splendid fun.",
         "Impossible dilemmas, a magical island, and magnificent perseverance.",
@@ -408,8 +448,9 @@ export const bookData: IBookData[] = [
   {
     name: "Jungle Tales of Tarzan",
     imageUrl: "https://i.imgur.com/UrJGU8k.png",
+    yearRead: 2017,
     review: {
-      year: 2017,
+      yearWritten: 1919,
       lines: [
         "Amusing, and captivating.",
         "Stories from a unique character with a charming perspective.",
@@ -420,8 +461,9 @@ export const bookData: IBookData[] = [
   {
     name: "Gulliver's Travels",
     imageUrl: "https://i.imgur.com/4tYIFpm.png",
+    yearRead: 2017,
     review: {
-      year: 2017,
+      yearWritten: 1726,
       lines: [
         "Whimsical, and entertaining.",
         "Well-written and self-contained stories to amuse and surprise.",
@@ -432,8 +474,9 @@ export const bookData: IBookData[] = [
   {
     name: "For Whom the Bell Tolls",
     imageUrl: "https://i.imgur.com/azkLTpy.png",
+    yearRead: 2017,
     review: {
-      year: 2017,
+      yearWritten: 1940,
       lines: [
         "Powerful, and resonant.",
         "Whispers of hope and the trudge of painful reality are at the forefront of this novel.",
@@ -445,8 +488,9 @@ export const bookData: IBookData[] = [
   {
     name: "Of Mice and Men",
     imageUrl: "https://i.imgur.com/3R4nroI.png",
+    yearRead: 2017,
     review: {
-      year: 2017,
+      yearWritten: 1937,
       lines: [
         "Woeful, and humbling.",
         "A tale of the beauty and cruelty in the world.",
@@ -457,8 +501,9 @@ export const bookData: IBookData[] = [
   {
     name: "To Kill a Mockingbird",
     imageUrl: "https://i.imgur.com/DrZwWVR.png",
+    yearRead: 2017,
     review: {
-      year: 2017,
+      yearWritten: 1960,
       lines: [
         "Timelessly harrowing.",
         "Reveals ugly truths about our former and current world through the eyes of innocence.",
@@ -470,8 +515,9 @@ export const bookData: IBookData[] = [
   {
     name: "The Wisdom of Insecurity",
     imageUrl: "https://i.imgur.com/P3cXlAb.png",
+    yearRead: 2017,
     review: {
-      year: 2017,
+      yearWritten: 1951,
       lines: [
         "Illuminating.",
         "Beautifully frames the issue of insecurity and anxiety.",
@@ -483,8 +529,9 @@ export const bookData: IBookData[] = [
   {
     name: "To Have and Have Not",
     imageUrl: "https://i.imgur.com/vk8JX7X.png",
+    yearRead: 2017,
     review: {
-      year: 2017,
+      yearWritten: 1937,
       lines: [
         "Quiet, rich, and beautiful.",
         "Another Hemingway gem.",
@@ -496,8 +543,9 @@ export const bookData: IBookData[] = [
   {
     name: "Vice Versa: A Lesson to Fathers",
     imageUrl: "https://i.imgur.com/V2OQLBE.png",
+    yearRead: 2016,
     review: {
-      year: 2016,
+      yearWritten: 1882,
       lines: [
         "Ceaselessly amusing.",
         "A tale that leaves you with the slightest grin on each page.",
@@ -509,8 +557,9 @@ export const bookData: IBookData[] = [
   {
     name: "Under the Dome",
     imageUrl: "https://i.imgur.com/4qRLuw6.png",
+    yearRead: 2016,
     review: {
-      year: 2016,
+      yearWritten: 2009,
       lines: [
         "Emotionally rich, and powerfully written.",
         "Like having manipulation and paranoia dropped into your backyard.",
@@ -522,8 +571,9 @@ export const bookData: IBookData[] = [
   {
     name: "The War of the Worlds",
     imageUrl: "https://i.imgur.com/TzjOgMm.png",
+    yearRead: 2016,
     review: {
-      year: 2016,
+      yearWritten: 1898,
       lines: [
         "Futility redefined.",
         "A challenge to mankind's self-proclaimed dominance and entitlement.",
@@ -534,8 +584,9 @@ export const bookData: IBookData[] = [
   {
     name: "The Phantom of the Opera",
     imageUrl: "https://i.imgur.com/HNSEPef.png",
+    yearRead: 2016,
     review: {
-      year: 2016,
+      yearWritten: 1909,
       lines: [
         "Unexpectedly exciting.",
         "Perfectly naive characters and a beautifully arranged mystery.",
@@ -546,8 +597,9 @@ export const bookData: IBookData[] = [
   {
     name: "The Book Thief",
     imageUrl: "https://i.imgur.com/Yk9kl0g.png",
+    yearRead: 2016,
     review: {
-      year: 2016,
+      yearWritten: 2005,
       lines: [
         "Simply beautiful.",
         "An unexpected exploration into the ceaseless persistence of humanity.",
@@ -559,8 +611,9 @@ export const bookData: IBookData[] = [
   {
     name: "Surely You're Joking, Mr. Feynman",
     imageUrl: "https://i.imgur.com/vBdT7JN.png",
+    yearRead: 2016,
     review: {
-      year: 2016,
+      yearWritten: 1985,
       lines: [
         "Absolutely riveting.",
         "Richard Feynman's amusing stories, valuable lessons, and unending humour makes this an absolute must read.",
@@ -572,8 +625,9 @@ export const bookData: IBookData[] = [
   {
     name: "Sled Driver",
     imageUrl: "https://i.imgur.com/Bx4a576.png",
+    yearRead: 2016,
     review: {
-      year: 2016,
+      yearWritten: 1991,
       lines: [
         "Truly extraordinary.",
         "Stories from an entirely different world.",
@@ -585,8 +639,9 @@ export const bookData: IBookData[] = [
   {
     name: "The Old Man and the Sea",
     imageUrl: "https://i.imgur.com/WV0nUdL.png",
+    yearRead: 2016,
     review: {
-      year: 2016,
+      yearWritten: 1952,
       lines: [
         "Empowering, humbling, and meaningful.",
         "This is the book that began my romance with Hemingway.",
@@ -598,16 +653,18 @@ export const bookData: IBookData[] = [
   {
     name: "Dune",
     imageUrl: "https://i.imgur.com/vXjV1VK.png",
+    yearRead: 2016,
     review: {
-      year: 2016,
+      yearWritten: 1965,
       lines: ["Imaginative.", "A mysterious universe with a certain allure."],
     },
   },
   {
     name: "An Astronaut's Guide to Life on Earth",
     imageUrl: "https://i.imgur.com/8tkZFMm.png",
+    yearRead: 2016,
     review: {
-      year: 2016,
+      yearWritten: 2013,
       lines: [
         "Reassuring, and helpful.",
         "Chris Hadfield has no secret other than hard work and dedication.",
@@ -618,8 +675,9 @@ export const bookData: IBookData[] = [
   {
     name: "Around the World in 80 Days",
     imageUrl: "https://i.imgur.com/rZrMb2T.png",
+    yearRead: 2016,
     review: {
-      year: 2016,
+      yearWritten: 1872,
       lines: [
         "Classically fun.",
         "Another book best described by a subtle grin.",
@@ -631,8 +689,9 @@ export const bookData: IBookData[] = [
   {
     name: "A Farewell to Arms",
     imageUrl: "https://i.imgur.com/7Qu9iXC.png",
+    yearRead: 2016,
     review: {
-      year: 2016,
+      yearWritten: 1929,
       lines: [
         "Hope, and futility.",
         "Challenges the actions of mankind through startlingly contrast.",
@@ -644,8 +703,9 @@ export const bookData: IBookData[] = [
   {
     name: "Treasure Island",
     imageUrl: "https://i.imgur.com/SIpqwWF.png",
+    yearRead: 2015,
     review: {
-      year: 2015,
+      yearWritten: 1883,
       lines: [
         "Captivating from page one.",
         "An intriguing narrative and exciting setting.",
@@ -656,8 +716,9 @@ export const bookData: IBookData[] = [
   {
     name: "The Time Machine",
     imageUrl: "https://i.imgur.com/cV12K2C.png",
+    yearRead: 2015,
     review: {
-      year: 2015,
+      yearWritten: 1895,
       lines: [
         "Mysterious, and strange.",
         "Questions rush in as an entirely new and everlastingly eerie world is painted.",
@@ -668,8 +729,9 @@ export const bookData: IBookData[] = [
   {
     name: "The Sun Also Rises",
     imageUrl: "https://i.imgur.com/vdX82z4.png",
+    yearRead: 2015,
     review: {
-      year: 2015,
+      yearWritten: 1926,
       lines: [
         "Patiently moving.",
         "The poetry of life displayed as it is.",
@@ -681,8 +743,9 @@ export const bookData: IBookData[] = [
   {
     name: "The Shining",
     imageUrl: "https://i.imgur.com/2eecA2Z.png",
+    yearRead: 2015,
     review: {
-      year: 2015,
+      yearWritten: 1977,
       lines: [
         "Eerie, and creeping.",
         "Wonderfully written and perfectly frightening.",
@@ -694,8 +757,9 @@ export const bookData: IBookData[] = [
   {
     name: "Slaughterhouse-Five",
     imageUrl: "https://i.imgur.com/gKE8MnE.png",
+    yearRead: 2015,
     review: {
-      year: 2015,
+      yearWritten: 1969,
       lines: [
         "Painfully moving.",
         "The disorientation of wars atrocities as they echo forever.",
@@ -707,8 +771,9 @@ export const bookData: IBookData[] = [
   {
     name: "Siddhartha",
     imageUrl: "https://i.imgur.com/9fF3rKn.png",
+    yearRead: 2015,
     review: {
-      year: 2015,
+      yearWritten: 1922,
       lines: [
         "Insightful, and nourishing.",
         "A terrific journey through the suffering and wanting of life.",
@@ -720,8 +785,9 @@ export const bookData: IBookData[] = [
   {
     name: "How to Win Friends and Influence People",
     imageUrl: "https://i.imgur.com/x5xVk6m.png",
+    yearRead: 2015,
     review: {
-      year: 2015,
+      yearWritten: 1936,
       lines: [
         "Classically straightforward.",
         "Dale Carnegie isn't teaching you how to be a business man, but rather how to be a decent person.",
@@ -733,8 +799,9 @@ export const bookData: IBookData[] = [
   {
     name: "The Hitchhiker's Guide to the Galaxy",
     imageUrl: "https://i.imgur.com/7lNos1A.png",
+    yearRead: 2015,
     review: {
-      year: 2015,
+      yearWritten: 1979,
       lines: [
         "Underwhelming.",
         "Funny at times, but largely disappointing.",
@@ -745,8 +812,9 @@ export const bookData: IBookData[] = [
   {
     name: "Flatland",
     imageUrl: "https://i.imgur.com/VENyp6F.png",
+    yearRead: 2015,
     review: {
-      year: 2015,
+      yearWritten: 1884,
       lines: [
         "Timeless, and eye-opening.",
         "An extraordinary way of explaining the unexplainable",
@@ -758,8 +826,9 @@ export const bookData: IBookData[] = [
   {
     name: "Strange Case of Dr. Jekyll and Mr. Hyde",
     imageUrl: "https://i.imgur.com/t6fFwTS.png",
+    yearRead: 2015,
     review: {
-      year: 2015,
+      yearWritten: 1886,
       lines: [
         "Fresh, and methodical.",
         "A very English take on gritty.",
@@ -771,8 +840,9 @@ export const bookData: IBookData[] = [
   {
     name: "Do Androids Dream of Electric Sheep?",
     imageUrl: "https://i.imgur.com/G5KgVVV.png",
+    yearRead: 2015,
     review: {
-      year: 2015,
+      yearWritten: 1968,
       lines: [
         "Uniquely captivating.",
         "A quaint take on a mildly dystopian world.",
@@ -783,8 +853,9 @@ export const bookData: IBookData[] = [
   {
     name: "Call of the Wild",
     imageUrl: "https://i.imgur.com/aXYeNSg.png",
+    yearRead: 2015,
     review: {
-      year: 2015,
+      yearWritten: 1903,
       lines: [
         "Savage, and astonishing.",
         "A journey of exploration unlike any other.",
@@ -795,8 +866,9 @@ export const bookData: IBookData[] = [
   {
     name: "The Way of Zen",
     imageUrl: "https://i.imgur.com/YNZmCeQ.png",
+    yearRead: 2015,
     review: {
-      year: 2015,
+      yearWritten: 1957,
       lines: [
         "Eye-opening, and thought-provoking.",
         "Alan Watts effectively teaches a different way of thinking.",
@@ -807,8 +879,9 @@ export const bookData: IBookData[] = [
   {
     name: "The Martian",
     imageUrl: "https://i.imgur.com/8GoguDX.png",
+    yearRead: 2015,
     review: {
-      year: 2015,
+      yearWritten: 2011,
       lines: [
         "Fun.",
         "Difficult to put down.",
@@ -820,8 +893,9 @@ export const bookData: IBookData[] = [
   {
     name: "The Catcher in the Rye",
     imageUrl: "https://i.imgur.com/J8ayCML.png",
+    yearRead: 2015,
     review: {
-      year: 2015,
+      yearWritten: 1951,
       lines: [
         "Introspective, and reminiscent.",
         "A character seldom played but very relatable.",
@@ -833,16 +907,18 @@ export const bookData: IBookData[] = [
   {
     name: "Animal Farm",
     imageUrl: "https://i.imgur.com/FGzOGor.png",
+    yearRead: 2015,
     review: {
-      year: 2015,
+      yearWritten: 1945,
       lines: ["Chilling.", "A brief overview into power and corruption."],
     },
   },
   {
     name: "The God Delusion",
     imageUrl: "https://i.imgur.com/kgz5Hbl.png",
+    yearRead: 2014,
     review: {
-      year: 2014,
+      yearWritten: 2006,
       lines: [
         "Perspective.",
         "The widespread phenomenon of religion as understood by a geneticist.",
@@ -854,8 +930,9 @@ export const bookData: IBookData[] = [
   {
     name: "The Count of Monte Cristo",
     imageUrl: "https://i.imgur.com/Qdj0Wax.png",
+    yearRead: 2014,
     review: {
-      year: 2014,
+      yearWritten: 1844,
       lines: [
         "Unprecedented excellence.",
         "A compelling story of patient justice and unrelenting composure.",
@@ -867,8 +944,9 @@ export const bookData: IBookData[] = [
   {
     name: "Brave New World",
     imageUrl: "https://i.imgur.com/F7JghRM.png",
+    yearRead: 2014,
     review: {
-      year: 2014,
+      yearWritten: 1932,
       lines: [
         "Unnerving.",
         "The weakness and arrogance of mankind as we grow comfortable and proud.",
@@ -880,8 +958,9 @@ export const bookData: IBookData[] = [
   {
     name: "20000 Leagues Under the Sea",
     imageUrl: "https://i.imgur.com/vnkRKvS.png",
+    yearRead: 2014,
     review: {
-      year: 2014,
+      yearWritten: 1870,
       lines: [
         "Constant adventure.",
         "A journey to captivate one's sense of discovery.",
@@ -892,8 +971,9 @@ export const bookData: IBookData[] = [
   {
     name: "The Ordeal of Gilbert Pinfold",
     imageUrl: "https://i.imgur.com/QiuQLtk.png",
+    yearRead: 2014,
     review: {
-      year: 2014,
+      yearWritten: 1957,
       lines: [
         "Unnerving, and fascinating",
         "A brief journey into the delusional mind.",
@@ -905,8 +985,9 @@ export const bookData: IBookData[] = [
   {
     name: "Sherlock Holmes",
     imageUrl: "https://i.imgur.com/np2agdP.png",
+    yearRead: 2014,
     review: {
-      year: 2014,
+      yearWritten: 1887,
       lines: [
         "Delightfully magnificent.",
         "Never has being on the edge of your seat been so fun.",
@@ -918,8 +999,9 @@ export const bookData: IBookData[] = [
   {
     name: "1984",
     imageUrl: "https://i.imgur.com/BnvrnlW.png",
+    yearRead: 2013,
     review: {
-      year: 2013,
+      yearWritten: 1949,
       lines: [
         "Tremendously agitating.",
         "An account of strength and weakness.",

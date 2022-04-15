@@ -22,8 +22,9 @@ export function circularMod(a: number, b: number): number {
   return ((a % b) + b) % b;
 }
 
-const BookCard = styled(Column)<{imageCard: boolean}>`
+const BookCard = styled(Column)<{ imageCard: boolean }>`
   ${boxShadow};
+  position: relative;
   padding: 16px;
   width: 400px;
   height: 582px;
@@ -33,10 +34,10 @@ const BookCard = styled(Column)<{imageCard: boolean}>`
     width: 350px;
     height: 509px;
   }
-    
+
   @media screen and (max-width: ${349}px) {
     width: 305px;
-    height: ${props => props.imageCard ? 443 : 509}px;
+    height: ${(props) => (props.imageCard ? 443 : 509)}px;
   }
 `;
 
@@ -105,7 +106,7 @@ export class Carousel extends React.Component<
 
   getBookCards = (index: number) => {
     const bookInfo = bookData[index];
-    const review = processReview(bookInfo.review);
+    const review = processReview(bookInfo);
     return (
       <>
         <BookCard imageCard>
