@@ -52,6 +52,20 @@ Images are 600x900 pixels
  */
 export const bookData: IBookData[] = [
   {
+    name: "The Icewind Dale Trilogy",
+    imageUrl: "https://i.imgur.com/2EY5xil.png",
+    yearRead: 2022,
+    review: {
+      yearWritten: 1988,
+      lines: [
+        "Gripping excellence.",
+        "Masterfully woven stories continue to build immersive and delightful narratives.",
+        "The peak of fast paced high fantasy.",
+        "With a world so large and filled with so much detail and allure, each chapter brings a new adventure.",
+      ],
+    },
+  },
+  {
     name: "The Godfather",
     imageUrl: "https://i.imgur.com/J2ykYft.png",
     yearRead: 2022,
