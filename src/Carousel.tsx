@@ -16,7 +16,7 @@ import { Typography } from "./components/Typography";
 const StyledSwipeableViews = styled(SwipeableViews)`
   width: 100%;
 `;
-const VirtualizedSwipeableViews = virtualize(StyledSwipeableViews);
+const VirtualizedSwipeableViews: any = virtualize(StyledSwipeableViews);
 
 export function circularMod(a: number, b: number): number {
   return ((a % b) + b) % b;

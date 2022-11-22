@@ -74,12 +74,12 @@ export class Header extends React.Component<{
         <HeaderRow>
           <Mobile>
             <HeaderTypography variant="h2">
-              sometimes paul reads.
+              sometimes paul reads
             </HeaderTypography>
           </Mobile>
           <TabletAndAbove>
             <HeaderTypography variant="h1">
-              sometimes paul reads.
+              sometimes paul reads
             </HeaderTypography>
           </TabletAndAbove>
 

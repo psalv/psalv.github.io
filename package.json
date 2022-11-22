@@ -17,8 +17,7 @@
     "typescript": "^4.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build && node scripts/adjust-paths.js > index.html"
   },
   "browserslist": {
     "production": [
@@ -33,7 +32,7 @@
     ]
   },
   "engines": {
-    "node": "14.x"
+    "node": "16.x"
   },
   "resolutions": {
     "styled-components": "^5"

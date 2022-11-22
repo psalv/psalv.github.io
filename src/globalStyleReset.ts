@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyleResets = createGlobalStyle`
+export const GlobalStyleResets: any = createGlobalStyle`
 /* -- RESET CSS -- */
 html,
 body,
