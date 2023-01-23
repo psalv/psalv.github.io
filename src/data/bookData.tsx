@@ -52,6 +52,20 @@ Images are 600x900 pixels
  */
 export const bookData: IBookData[] = [
   {
+    name: "2001: A Space Odyssey",
+    imageUrl: "https://i.imgur.com/ObHaVH9.png",
+    yearRead: 2023,
+    review: {
+      yearWritten: 1968,
+      lines: [
+        "A roller coaster of intrigue.",
+        "This journey across mankind’s evolution appeals to the great sense of human curiosity.",
+        "The unique storytelling creates a captivating and immersive narrative. ",
+        "Wonderfully fun and masterfully suspenseful.",
+      ],
+    },
+  },
+  {
     name: "The Icewind Dale Trilogy",
     imageUrl: "https://i.imgur.com/2EY5xil.png",
     yearRead: 2022,
