@@ -52,6 +52,20 @@ Images are 600x900 pixels
  */
 export const bookData: IBookData[] = [
   {
+    name: "The Grapes of Wrath",
+    imageUrl: "https://i.imgur.com/w4tB3Vy.png",
+    yearRead: 2023,
+    review: {
+      yearWritten: 1939,
+      lines: [
+        "Heartbreaking then, and now.",
+        "A harsh critique of capitalism in America, and the commodification and dehumanization of man.",
+        "Cautious optimism crumbles as desperation mounts under the might of unending greed.",
+        "A transparent look at the foundations of disparity that never left our society, and the values that we left behind.",
+      ],
+    },
+  },
+  {
     name: "2001: A Space Odyssey",
     imageUrl: "https://i.imgur.com/ObHaVH9.png",
     yearRead: 2023,
