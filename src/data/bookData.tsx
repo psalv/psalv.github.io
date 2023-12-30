@@ -52,6 +52,20 @@ Images are 600x900 pixels
  */
 export const bookData: IBookData[] = [
   {
+    name: "I, Robot",
+    imageUrl: "https://i.imgur.com/p6fAR9n.png",
+    yearRead: 2023,
+    review: {
+      yearWritten: 1950,
+      lines: [
+        "Contemplation of a once distant reality.",
+        "A hopelessly optimistic view on man’s relationship with technology.",
+        "Retrospectively gripping as the reader weighs old fears against the modern age.",
+        "The self contained stories each have a distinctive charm.",
+      ],
+    },
+  },
+  {
     name: "The Grapes of Wrath",
     imageUrl: "https://i.imgur.com/w4tB3Vy.png",
     yearRead: 2023,

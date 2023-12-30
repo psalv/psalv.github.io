@@ -18,7 +18,8 @@
   },
   "scripts": {
     "clean": "rm -rf build",
-    "build": "react-scripts build && node scripts/adjust-paths.js > index.html"
+    "build_chunk": "react-scripts build && node scripts/adjust-paths.js > index.html",
+    "build": "yarn clean && yarn build_chunk"
   },
   "browserslist": {
     "production": [
