@@ -52,6 +52,20 @@ Images are 600x900 pixels
  */
 export const bookData: IBookData[] = [
   {
+    name: "Lord of the Flies",
+    imageUrl: "https://i.imgur.com/u0SqVbk.png",
+    yearRead: 2024,
+    review: {
+      yearWritten: 1954,
+      lines: [
+        "Spiteful pride and childish loathing.",
+        "Voices of reason deafen under cries of savagery.",
+        "Order and civility succumb to chaos and fear.",
+        "A magnifying glass held to our tenuous social balance.",
+      ],
+    },
+  },
+  {
     name: "I, Robot",
     imageUrl: "https://i.imgur.com/p6fAR9n.png",
     yearRead: 2023,
