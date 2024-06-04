@@ -52,6 +52,20 @@ Images are 600x900 pixels
  */
 export const bookData: IBookData[] = [
   {
+    name: "American Psycho",
+    imageUrl: "https://i.imgur.com/DKuxNF6.png",
+    yearRead: 2024,
+    review: {
+      yearWritten: 1991,
+      lines: [
+        "Deeply unpleasant.",
+        "A cacophony of disturbing imagery, obsessive ranting, and stark juxtapositions.",
+        "A blunt and tireless critique of narcissism.",
+        "You probably don’t want to read this book.",
+      ],
+    },
+  },
+  {
     name: "Lord of the Flies",
     imageUrl: "https://i.imgur.com/u0SqVbk.png",
     yearRead: 2024,
