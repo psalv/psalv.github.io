@@ -52,6 +52,20 @@ Images are 600x900 pixels
  */
 export const bookData: IBookData[] = [
   {
+    name: "Fear and Loathing in Las Vegas",
+    imageUrl: "https://i.imgur.com/ctJT4m7.png",
+    yearRead: 2024,
+    review: {
+      yearWritten: 1971,
+      lines: [
+        "A tempest of madness.",
+        "Self-righteousness longing for place.",
+        "Looking behind the curtain only to be greeted by paranoia and delusion.",
+        "The feeling of grasping for progress but going nowhere.",
+      ],
+    },
+  },
+  {
     name: "American Psycho",
     imageUrl: "https://i.imgur.com/DKuxNF6.png",
     yearRead: 2024,
