@@ -52,6 +52,20 @@ Images are 600x900 pixels
  */
 export const bookData: IBookData[] = [
   {
+    name: "The Legacy of the Drow Quartet",
+    imageUrl: "https://i.imgur.com/IkRg0OF.png",
+    yearRead: 2025,
+    review: {
+      yearWritten: 1992,
+      lines: [
+        "For those who love adventure.",
+        "Loss, helplessness, glory, and awe.",
+        "Each chapter and each book more gripping than the last.",
+        "Some of the most fun you can have with a book.",
+      ],
+    },
+  },
+  {
     name: "Fear and Loathing in Las Vegas",
     imageUrl: "https://i.imgur.com/ctJT4m7.png",
     yearRead: 2024,
