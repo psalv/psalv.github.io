@@ -52,6 +52,20 @@ Images are 600x900 pixels
  */
 export const bookData: IBookData[] = [
   {
+    name: "Man's Search for Meaning",
+    imageUrl: "https://i.imgur.com/PrsevDe.png",
+    yearRead: 2025,
+    review: {
+      yearWritten: 1946,
+      lines: [
+        "Uniquely provoking.",
+        "The clarity found in suffering.",
+        "A confrontation of the innermost self coupled with a detailed blueprint for introspection.",
+        "An unexpected change in perspective and newfound thankfulness.",
+      ],
+    },
+  },
+  {
     name: "The Legacy of the Drow Quartet",
     imageUrl: "https://i.imgur.com/IkRg0OF.png",
     yearRead: 2025,
