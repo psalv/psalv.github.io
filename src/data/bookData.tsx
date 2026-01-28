@@ -52,6 +52,20 @@ Images are 600x900 pixels
  */
 export const bookData: IBookData[] = [
   {
+    name: "A Promised Land",
+    imageUrl: "https://i.imgur.com/lGJJxY8.png",
+    yearRead: 2026,
+    review: {
+      yearWritten: 2020,
+      lines: [
+        "Eye opening.",
+        "Recontextualizes a decade of history and progress.",
+        "Wonderful writing, beautiful idealism, unwavering dedication.",
+        "Hope confronts stagnation and division.",
+      ],
+    },
+  },
+  {
     name: "Man's Search for Meaning",
     imageUrl: "https://i.imgur.com/PrsevDe.png",
     yearRead: 2025,
