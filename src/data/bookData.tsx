@@ -52,6 +52,20 @@ Images are 600x900 pixels
  */
 export const bookData: IBookData[] = [
   {
+    name: "Tai-Pan",
+    imageUrl: "https://i.imgur.com/A3dAwUv.png",
+    yearRead: 2026,
+    review: {
+      yearWritten: 1966,
+      lines: [
+        "Mesmerizing.",
+        "Impossibly cunning and endlessly intriguing.",
+        "Leadership's gravity reeling against ambition's incessant yearning.",
+        "For those who love masterfully woven stories."
+      ],
+    },
+  },
+  {
     name: "A Promised Land",
     imageUrl: "https://i.imgur.com/lGJJxY8.png",
     yearRead: 2026,
