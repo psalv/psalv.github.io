@@ -52,6 +52,20 @@ Images are 600x900 pixels
  */
 export const bookData: IBookData[] = [
   {
+    name: "The Dispossessed",
+    imageUrl: "https://i.imgur.com/UajbFYJ.png",
+    yearRead: 2026,
+    review: {
+      yearWritten: 1974,
+      lines: [
+        "Complex and intentionally unsatisfying.", 
+        "A deeply original philosophical narrative.", 
+        "Confronts preconceptions and dissects human nature.", 
+        "For the introspective, this novel will have a lasting impact.",
+      ],
+    },
+  },
+  {
     name: "Tai-Pan",
     imageUrl: "https://i.imgur.com/A3dAwUv.png",
     yearRead: 2026,
@@ -61,7 +75,7 @@ export const bookData: IBookData[] = [
         "Mesmerizing.",
         "Impossibly cunning and endlessly intriguing.",
         "Leadership's gravity reeling against ambition's incessant yearning.",
-        "For those who love masterfully woven stories."
+        "For those who love masterfully woven stories.",
       ],
     },
   },
