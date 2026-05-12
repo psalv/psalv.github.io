@@ -52,15 +52,29 @@ Images are 600x900 pixels
  */
 export const bookData: IBookData[] = [
   {
+    name: "Frankenstein; or, The Modern Prometheus ",
+    imageUrl: "https://i.imgur.com/HjdwOmG.png",
+    yearRead: 2026,
+    review: {
+      yearWritten: 1818,
+      lines: [
+        "Cast aside expectations.",
+        "A timeless tale of human nature and ambition's ugly and unrelenting shadow.",
+        "The delicate dance between a man's regret, duty, and arrogance.",
+        "Sometimes pitiable, often enraging, and tied together with a thread of amusement.",
+      ],
+    },
+  },
+  {
     name: "The Dispossessed",
     imageUrl: "https://i.imgur.com/UajbFYJ.png",
     yearRead: 2026,
     review: {
       yearWritten: 1974,
       lines: [
-        "Complex and intentionally unsatisfying.", 
-        "A deeply original philosophical narrative.", 
-        "Confronts preconceptions and dissects human nature.", 
+        "Complex and intentionally unsatisfying.",
+        "A deeply original philosophical narrative.",
+        "Confronts preconceptions and dissects human nature.",
         "For the introspective, this novel will have a lasting impact.",
       ],
     },
