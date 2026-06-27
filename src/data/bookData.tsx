@@ -51,17 +51,26 @@ export const processReview = (bookInfo: IBookData) => {
 Images are 600x900 pixels
  */
 export const bookData: IBookData[] = [
+  // {
+  //   name: "The Wisdom of Insecurity",
+  //   imageUrl: "https://i.imgur.com/P3cXlAb.png",
+  //   yearRead: 2026,
+  //   review: {
+  //     yearWritten: 1951,
+  //     lines: [""],
+  //   },
+  // },
   {
-    name: "Frankenstein; or, The Modern Prometheus ",
-    imageUrl: "https://i.imgur.com/HjdwOmG.png",
+    name: "The Dead",
+    imageUrl: "https://i.imgur.com/LfCSTeh.png",
     yearRead: 2026,
     review: {
-      yearWritten: 1818,
+      yearWritten: 1914,
       lines: [
-        "Cast aside expectations.",
-        "A timeless tale of human nature and ambition's ugly and unrelenting shadow.",
-        "The delicate dance between a man's regret, duty, and arrogance.",
-        "Sometimes pitiable, often enraging, and tied together with a thread of amusement.",
+        "The something below nothing.",
+        "A moment lived and a moment lingered.",
+        "A quiet bubbling and a pop.",
+        "Asks the reader how to let go.",
       ],
     },
   },
