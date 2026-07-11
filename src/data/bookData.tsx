@@ -51,15 +51,20 @@ export const processReview = (bookInfo: IBookData) => {
 Images are 600x900 pixels
  */
 export const bookData: IBookData[] = [
-  // {
-  //   name: "The Wisdom of Insecurity",
-  //   imageUrl: "https://i.imgur.com/P3cXlAb.png",
-  //   yearRead: 2026,
-  //   review: {
-  //     yearWritten: 1951,
-  //     lines: [""],
-  //   },
-  // },
+  {
+    name: "The Wisdom of Insecurity",
+    imageUrl: "https://i.imgur.com/P3cXlAb.png",
+    yearRead: 2026,
+    review: {
+      yearWritten: 1951,
+      lines: [
+        "To accept and embrace.",
+        "A reminder of our innate impermanence and the futility of control.",
+        "An invitation to step back and reflect.",
+        "A welcome revisiting.",
+      ],
+    },
+  },
   {
     name: "The Dead",
     imageUrl: "https://i.imgur.com/LfCSTeh.png",
